@@ -1,0 +1,88 @@
+/**
+*   Content
+*
+*   Basic content structure
+*
+*   @class     .content
+*   @children
+*   @states
+*   @mutators
+*/
+.content {
+
+  /**
+  *   .content
+  *
+  *   Main style.
+  */
+  & {
+    width 100%
+    display flex
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5 {
+    margin-top 0 !important
+  }
+
+  /**
+  *   Children
+  */
+  & .content-media {
+    padding-right 1rem
+
+    & > .icon {
+      font-size _font-size-h1
+    }
+  }
+
+  & .content-body {
+    flex 1
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+  &.is-small {
+    & .content-media {
+      padding-right .25rem
+    }
+  }
+
+  &.is-reversed {
+    flex-direction row-reverse
+
+    & .content-media {
+      padding-right 0
+      padding-left 1rem
+    }
+  }
+
+  &.is-vertical {
+    & {
+      text-align center
+      flex-direction column
+    }
+
+    & .content-media {
+      padding 1rem 0
+    }
+
+    &.to-left {
+      text-align left
+    }
+  }
+
+  &.to-center {
+    align-items center
+    justify-content center
+  }
+
+}

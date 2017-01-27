@@ -1,0 +1,183 @@
+/**
+*   Padding
+*   Helper class to set base padding.
+*
+*   @class     .has-padding, .has-padding-y, .has-padding-x, .has-padding-top,
+*              .has-padding-right, .has-padding-bottom, .has-padding-left
+*              .has-small-padding, .has-small-padding-y, .has-small-padding-x,
+*              .has-small-padding-top, .has-small-padding-right,
+*              .has-small-padding-bottom, .has-small-padding-left
+*/
+.has-padding {
+
+  /**
+  *   Base padding
+  *   Base padding value.
+  *
+  *   @var    $padding
+  */
+  $padding = 1rem;
+
+  /**
+  *   Padding
+  *   Sets the base padding to all sides.
+  *
+  *   @selector .padding
+  */
+  & {
+    padding-top $padding
+    padding-left $padding
+    padding-right $padding
+    padding-bottom $padding
+  }
+
+  /**
+  *   Padding Horizontal
+  *   Sets the base padding only on the left/right.
+  *
+  *   @selector .padding-x
+  */
+  &-x {
+    padding-left $padding
+    padding-right $padding
+  }
+
+  /**
+  *   Padding Vertical
+  *   Sets the base padding only on the top/bottom.
+  *
+  *   @selector .padding-y
+  */
+  &-y {
+    padding-top $padding
+    padding-bottom $padding
+  }
+
+  /**
+  *   Padding Top
+  *   Sets the base padding to the top.
+  *
+  *   @selector .padding-top
+  */
+  &-top {
+    padding-top $padding
+  }
+
+  /**
+  *   Padding Right
+  *   Sets the base padding to the right.
+  *
+  *   @selector .padding-right
+  */
+  &-right {
+    padding-right $padding
+  }
+
+  /**
+  *   Padding Bottom
+  *   Sets the base padding to the bottom.
+  *
+  *   @selector .padding-bottom
+  */
+  &-bottom {
+    padding-bottom $padding
+  }
+
+  /**
+  *   Padding Left
+  *   Sets the base padding to the left.
+  *
+  *   @selector .padding-left
+  */
+  &-left {
+    padding-left $padding
+  }
+
+}
+
+.has-small-padding {
+
+  /**
+  *   Small padding
+  *   Small padding value.
+  *
+  *   @var    $padding
+  */
+  $padding = .50rem;
+
+  /**
+  *   Padding
+  *   Sets the base padding to all sides.
+  *
+  *   @selector .padding
+  */
+  & {
+    padding-top $padding
+    padding-left $padding
+    padding-right $padding
+    padding-bottom $padding
+  }
+
+  /**
+  *   Padding Horizontal
+  *   Sets the base padding only on the left/right.
+  *
+  *   @selector .padding-x
+  */
+  &-x {
+    padding-left $padding
+    padding-right $padding
+  }
+
+  /**
+  *   Padding Vertical
+  *   Sets the base padding only on the top/bottom.
+  *
+  *   @selector .padding-y
+  */
+  &-y {
+    padding-top $padding
+    padding-bottom $padding
+  }
+
+  /**
+  *   Padding Top
+  *   Sets the base padding to the top.
+  *
+  *   @selector .padding-top
+  */
+  &-top {
+    padding-top $padding
+  }
+
+  /**
+  *   Padding Right
+  *   Sets the base padding to the right.
+  *
+  *   @selector .padding-right
+  */
+  &-right {
+    padding-right $padding
+  }
+
+  /**
+  *   Padding Bottom
+  *   Sets the base padding to the bottom.
+  *
+  *   @selector .padding-bottom
+  */
+  &-bottom {
+    padding-bottom $padding
+  }
+
+  /**
+  *   Padding Left
+  *   Sets the base padding to the left.
+  *
+  *   @selector .padding-left
+  */
+  &-left {
+    padding-left $padding
+  }
+
+}

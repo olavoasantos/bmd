@@ -1,0 +1,43 @@
+/**
+*   Pre
+*
+*   @class      pre
+*   @children   code
+*/
+pre {
+
+	/**
+	*   Background color
+	*
+	*   @var    $background-color  Pre tag background color.
+	*/
+	$background-color = _dark-l;
+
+	/**
+	*   Font color
+	*
+	*   @var    $color  Pre tag font color.
+	*/
+	$color = _dark;
+
+	/**
+	*   pre
+	*
+	*   Main style.
+	*/
+	& {
+		color $color
+		padding 1rem
+		padding-bottom 0
+		word-wrap normal
+		white-space pre-wrap
+		border-radius _border-radius
+		background-color $background-color
+	}
+
+/**
+*   Children
+*/
+@import "pre-children/code.styl";
+
+}

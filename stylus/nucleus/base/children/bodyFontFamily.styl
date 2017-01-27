@@ -1,0 +1,29 @@
+/**
+*   body font family
+*
+*   @class     body, button, input, select, textarea
+*/
+p,
+body,
+input,
+button,
+select,
+textarea {
+
+	/**
+	*   Font family
+	*
+	*   @var    $font-family  Default font family for the body.
+	*/
+	$font-family = _font-family-body;
+
+	/**
+	*   body, button, input, select, textarea
+	*
+	*   Main style.
+	*/
+	& {
+		font-family $font-family
+	}
+
+}

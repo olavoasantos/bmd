@@ -1,0 +1,27 @@
+/**
+*   Monospace
+*
+*   @class     pre, code
+*/
+pre, code {
+
+	/**
+	*   Font family
+	*
+	*   @var    $font-family  Default code font family.
+	*/
+	$font-family = _font-family-monospace;
+
+	/**
+	*   code, pre
+	*
+	*   Main style.
+	*/
+	& {
+		line-height 1.25
+		font-family $font-family
+		-webkit-font-smoothing auto
+		-moz-osx-font-smoothing auto
+	}
+
+}

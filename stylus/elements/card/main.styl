@@ -1,0 +1,92 @@
+/**
+*   Card
+*
+*   Basic card
+*
+*   @class     .card
+*   @children
+*   @states
+*   @mutators
+*/
+.card {
+
+  /**
+  *   .card
+  *
+  *   Main style.
+  */
+  & {
+    margin 1rem 0
+    user-select none
+    background-color _white
+    border-radius _border-radius
+    border _border-width solid _light-l2
+  }
+
+  /**
+  *   Children
+  */
+  & h1:first-child,
+  & h2:first-child,
+  & h3:first-child,
+  & h4:first-child,
+  & h5:first-child {
+    margin-top 0
+  }
+  & .card-header {
+    display flex
+    padding 1rem
+    align-items center
+    justify-content center
+    border-bottom _border-width solid _light-l2
+
+    & > .title {
+      flex 1
+      margin 0
+      font-weight _weight-bold
+      font-family _font-family-title
+    }
+
+    & > .action {
+      color _light
+      font-weight _weight-normal
+    }
+  }
+  & .card-body {
+    padding 1.50rem 2rem
+  }
+  & .card-footer {
+    display flex
+    cursor default
+    align-items center
+    align-content space-between
+    border-top _border-width solid _light-l2
+
+    & .item {
+      flex 1
+      font inherit
+      font-size 100%
+      padding 1rem 0
+      text-align center
+
+      &:not(:last-child) {
+        border-right _border-width solid _light-l2
+      }
+    }
+    & .item.action {
+      cursor pointer
+      &:hover {
+        background-color _white-d
+      }
+    }
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+
+}

@@ -1,0 +1,108 @@
+/**
+*   Toggle
+*
+*   @class      .toggle
+*   @children   .toggle-trigger, .toggle-title, .toggle-body
+*   @states     :checked
+*/
+.toggle {
+
+  /**
+  *   Toggle
+  *
+  *   @selector .toggle
+  */
+  & {
+    width 100%
+    display inline-block
+  }
+
+  /**
+  *   Toggle trigger
+  *
+  *   @selector .toggle .toggle-trigger
+  */
+  & &-trigger {
+    display none
+  }
+
+  /**
+  *   Toggle Title
+  *
+  *   @selector .toggle .toggle-trigger ~ .toggle-title
+  */
+  & &-trigger ~ &-title {
+    font inherit
+    display flex
+    cursor pointer
+    font-size 100%
+    padding 1rem 0
+    user-select none
+    align-items center
+    padding-bottom .50rem
+    justify-content center
+  }
+
+  /**
+  *   Toggle Title Icon
+  *
+  *   @selector .toggle .toggle-trigger ~ .toggle-title::after
+  */
+  & &-trigger ~ &-title::after {
+    flex 1
+    color _light
+    content "\f107"
+    text-align right
+    margin-right .50rem
+    font-family "FontAwesome"
+  }
+
+  /**
+  *   Toggle Body
+  *
+  *   @selector .toggle .toggle-trigger ~ .toggle-body
+  */
+  & &-trigger ~ &-body {
+    height 0
+    opacity 0
+    padding 0
+    overflow hidden
+    transition all .3s
+  }
+
+  /**
+  *   Active Toggle Title
+  *
+  *   @selector .toggle .toggle-trigger:checked ~ .toggle-title
+  *   @state    :checked
+  */
+  & &-trigger:checked ~ &-title {
+    font-weight _weight-bold
+    padding-bottom 1rem
+  }
+
+  /**
+  *   Active Toggle Title Icon
+  *
+  *   @selector .toggle .toggle-trigger:checked ~ .toggle-title::after
+  *   @state    :checked
+  */
+  & &-trigger:checked ~ &-title::after {
+    content "\f106"
+  }
+
+  /**
+  *   Active Toggle Body
+  *
+  *   @selector .toggle .toggle-trigger:checked ~ .toggle-body
+  *   @state    :checked
+  */
+  & &-trigger:checked ~ &-body {
+    opacity 1
+    height auto
+    display flex
+    padding 1rem 0
+    border-top _border-width solid _light
+  }
+
+}

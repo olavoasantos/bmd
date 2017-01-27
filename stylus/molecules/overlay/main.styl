@@ -1,0 +1,80 @@
+/**
+*   Overlay
+*
+*
+*
+*   @class     .overlay
+*   @children
+*   @states
+*   @mutators
+*/
+.overlay {
+
+  /**
+  *   .overlay
+  *
+  *   Main style.
+  */
+  & {
+    top 0
+    left 0
+    opacity 0
+    z-index 100
+    position fixed
+    visibility hidden
+    transition all .2s
+  }
+
+  /**
+  *   Children
+  */
+  & .content {
+    top 50vh
+    left 50vw
+    z-index 110
+    max-width 60%
+    position relative
+    transform translate(-50%, -50%)
+  }
+
+  & .overlay-dismiss {
+    top 0
+    right 0
+    opacity .5
+    z-index 101
+    display flex
+    color _white
+    cursor pointer
+    padding .50rem
+    position fixed
+    width 3.625rem
+    height 3.625rem
+    margin-top 1rem
+    margin-right 1rem
+    align-items center
+    padding-top .25rem
+    justify-content center
+    transition opacity .3s
+    font-size _font-size-h1
+    background-color _dark-l
+    border-radius _border-radius-circle
+
+    &:hover {
+      opacity 1
+      background-color _dark-l2
+    }
+  }
+
+  /**
+  *   States
+  */
+  &.is-visible {
+    opacity 1
+    visibility visible
+  }
+
+  /**
+  *   Mutators
+  */
+
+}

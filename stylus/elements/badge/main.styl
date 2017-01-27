@@ -1,0 +1,59 @@
+/**
+*   Badge
+*
+*   Basic badge.
+*
+*   @class     .badge
+*   @children
+*   @states
+*   @mutators
+*/
+.badge {
+
+  /**
+  *   .badge
+  *
+  *   Main style.
+  */
+  & {
+    color _white
+    font-size 80%
+    cursor default
+    display inline
+    user-select none
+    border-radius 500px
+    padding .10rem .50rem
+    font-weight _weight-bold
+    text-transform uppercase
+    background-color _highlight
+    font-family _font-family-title
+  }
+
+  &.is-dot {
+    margin 0
+    padding 0
+    width 5px
+    height 5px
+  }
+
+  &.is-red {
+    background-color _red
+  }
+
+  &.is-blue {
+    background-color _blue
+  }
+
+  &.is-green {
+    background-color _green
+  }
+
+  &.is-yellow {
+    background-color _yellow
+  }
+
+  &.is-primary {
+    background-color _primary
+  }
+
+}

@@ -1,0 +1,128 @@
+/**
+*   Stat
+*
+*   Basic stats
+*
+*   @class     .stat
+*   @children
+*   @states
+*   @mutators
+*/
+.stat {
+
+  /**
+  *   .stat
+  *
+  *   Main style.
+  */
+  & {
+    display flex
+    align-content center
+    justify-content center
+    color _font-color-secondary
+  }
+
+  /**
+  *   Children
+  */
+  & .icon {
+    order 0
+    margin-right .50rem
+  }
+  & .stat-value {
+    order 1
+    margin-right .25rem
+  }
+  & .stat-name {
+    order 2
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+  &.is-reversed {
+    & {
+      flex-direction column
+      justify-content center
+      align-content center
+    }
+
+    & .icon {
+      width 100%
+      text-align center
+    }
+
+    & .stat-value {
+      width 100%
+      text-align center
+      font-size _font-size-h4
+    }
+
+    & .stat-name {
+      width 100%
+      text-align center
+      font-size _font-size-sm
+    }
+  }
+  &.is-fancy {
+    & {
+      color _font-color
+    }
+
+    & .stat-value {
+      font-weight _weight-bold
+    }
+
+    & .stat-name {
+      color _grey
+    }
+
+    &.is-red {
+      background-color inherit
+      & .icon {
+        color _red
+      }
+    }
+
+    &.is-green {
+      background-color inherit
+      & .icon {
+        color _green
+      }
+    }
+
+    &.is-blue {
+      background-color inherit
+      & .icon {
+        color _blue
+      }
+    }
+
+    &.is-primary {
+      background-color inherit
+      & .icon {
+        color _primary
+      }
+    }
+
+    &.is-yellow {
+      background-color inherit
+      & .icon {
+        color _yellow
+      }
+    }
+
+    &.is-highlight {
+      background-color inherit
+      & .icon {
+        color _highlight
+      }
+    }
+
+  }
+
+}

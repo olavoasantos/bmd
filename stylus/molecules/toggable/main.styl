@@ -1,0 +1,92 @@
+/**
+*   Toggable
+*
+*   @class     .toggable
+*   @children
+*   @states
+*   @mutators
+*/
+.toggable {
+
+  /**
+  *   .toggable
+  *
+  *   Main style.
+  */
+  & {
+    width 100%
+    display flex
+    flex-direction column
+  }
+
+  /**
+  *   Children
+  */
+  .box > &:first-child &-title {
+    padding 0
+  }
+  .box > &:first-child &-content {
+    margin-top 1rem
+    padding-bottom 0
+  }
+
+  & &-title {
+    width 100%
+    display flex
+    cursor pointer
+    padding 1rem 0
+    user-select none
+    align-items center
+    align-content space-between
+
+    &.is-active {
+      font-weight _weight-bold
+
+      &::after {
+        content "\f106"
+      }
+    }
+
+    & .toggable-icon {
+      flex-shrink 1
+      padding-right 1rem
+      font-size _font-size-h4
+      font-weight _weight-bold
+      text-transform uppercase
+      font-family _font-family-title
+    }
+
+    &::after {
+      flex 1
+      color _light
+      content "\f107"
+      text-align right
+      font-family "FontAwesome"
+    }
+
+  }
+
+  & &-content {
+    height 0
+    opacity 0
+    padding 1rem 0
+    overflow hidden
+    transition all 1s
+    border-top _border-width solid _light
+
+    &.is-visible {
+      opacity 1
+      height auto
+      transition all 1s
+    }
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+
+}

@@ -1,0 +1,32 @@
+/**
+*   Strong tag
+*
+*   @class     strong
+*/
+strong, b {
+
+	/**
+	*   Font color
+	*
+	*   @var    $color  Default strong tag font color.
+	*/
+	$color = _color-body;
+
+	/**
+	*   Font weight
+	*
+	*   @var    $font-weight  Default strong tag font weight.
+	*/
+	$font-weight = _weight-bold;
+
+	/**
+	*   strong
+	*
+	*   Main style.
+	*/
+	& {
+		color $color
+		font-weight $font-weight
+	}
+
+}

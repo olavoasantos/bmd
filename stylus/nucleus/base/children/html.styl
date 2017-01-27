@@ -1,0 +1,37 @@
+/**
+*   html
+*
+*   @class     html
+*/
+html {
+
+	/**
+	*   Background color
+	*
+	*   @var    $background-color  Document's default background color.
+	*/
+	$background-color = _light-l;
+
+	/**
+	*   Font size
+	*
+	*   @var    $font-size  Document's default font size
+	*/
+	$font-size = _font-size-basel;
+
+	/**
+	*   html
+	*
+	*   Main style.
+	*/
+	& {
+		width 100vw
+		height 100vh
+		overflow-x hidden
+		font-size $font-size
+		-moz-osx-font-smoothing grayscale
+		background-color $background-color
+		-webkit-font-smoothing antialiased
+	}
+
+}

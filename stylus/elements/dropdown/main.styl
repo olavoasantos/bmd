@@ -1,0 +1,72 @@
+/**
+*   Dropdown Menu
+*
+*   @class     .dropdown
+*   @children
+*   @states
+*   @mutators
+*/
+.dropdown {
+
+  /**
+  *   .dropdown
+  *
+  *   Main style.
+  */
+  & {
+    display flex
+    justify-content flex-start
+    position relative
+  }
+
+  &.is-left {
+    justify-content flex-end
+  }
+
+  & &-controller {
+    display none
+  }
+
+  & &-controller ~ &-header {
+    margin 0
+    cursor pointer
+    user-select none
+    transition all .3s
+    //padding 1rem .50rem
+    padding 0
+    border _border-width solid transparent
+
+    &:hover {
+      background-color _primary-l
+    }
+  }
+
+  & &-controller ~ &-menu {
+    height 0
+    top 100%
+    opacity 0
+    z-index 50
+    min-width 10rem
+    overflow hidden
+    position absolute
+    transition height .3s, opacity .3s, box-shadow .3s
+    background-color _light-l
+    border _border-width solid _light-l2
+    box-shadow none
+    border-radius 0 0 _border-radius _border-radius
+  }
+
+  & &-controller:checked ~ &-header {
+    //padding 1rem .50rem
+    border-color _light-l2
+    background-color _primary-l
+    border-radius _border-radius _border-radius 0 0
+  }
+
+  & &-controller:checked ~ &-menu {
+    opacity 1
+    height auto
+    box-shadow 0 2px 1px rgba(_dark-l, .4)
+  }
+
+}

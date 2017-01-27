@@ -1,0 +1,78 @@
+/**
+*   Popup
+*
+*   Popup message.
+*
+*   @class     .*[data-popup]
+*   @children
+*   @states
+*   @mutators
+*/
+[data-popup] {
+
+  /**
+  *   .*[data-popup]
+  *
+  *   It sets the main style for Popup.
+  */
+  & {
+    display flex
+    position relative
+  }
+
+  /**
+  *  *[data-popup]:after
+  *
+  *   Displays popup message.
+  */
+  &:hover::after, &:hover::before {
+    color _light-l
+    padding .50rem
+    min-width 6rem
+    max-width 10rem
+    position absolute
+    text-align center
+    background-color _dark
+    font-size _font-size-sm
+    border-radius _border-radius
+  }
+
+  &[data-popup-on="right"]:hover::after {
+    top 50%
+    left 100%
+    content attr(data-popup)
+    transform translate(.50rem, -50%)
+  }
+
+  &[data-popup-on="left"]:hover::before {
+    top 50%
+    right 100%
+    content attr(data-popup)
+    transform translate(-.50rem, -50%)
+  }
+
+  /**
+  *   *[data-popup]:[data-popup-on="top"]
+  *
+  *   It sets the style for [data-popup-on="top"] selector.
+  */
+  &[data-popup-on="top"]:hover::before {
+    left 50%
+    bottom 100%
+    content attr(data-popup)
+    transform translate(-50%, 0)
+  }
+
+  /**
+  *   *[data-popup]:[data-popup-on="bottom"]
+  *
+  *   It sets the style for [data-popup-on="bottom"] selector.
+  */
+  &[data-popup-on="bottom"]:hover::before {
+    top 100%
+    left 50%
+    content attr(data-popup)
+    transform translate(-50%, 0%)
+  }
+
+}

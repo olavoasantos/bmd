@@ -1,0 +1,42 @@
+/**
+*   Anchor tag
+*
+*   @class     a
+*/
+a {
+
+	/**
+	*   Font color
+	*
+	*   @var    $color  Default anchor tag font color.
+	*/
+	$color = _primary;
+
+	/**
+	*   Hovered font color
+	*
+	*   @var    $color-hover  Default anchor tag hovered font color.
+	*/
+	$color-hover = _primary-l2;
+
+	/**
+	*   a
+	*
+	*   Main style.
+	*/
+	& {
+		color $color
+		cursor pointer
+		text-decoration none
+	}
+
+	/**
+	*   a:hover
+	*
+	*   Hover style.
+	*/
+	&:hover {
+		color $color-hover
+	}
+
+}

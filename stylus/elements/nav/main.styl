@@ -1,0 +1,73 @@
+/**
+*   Nav
+*
+*   Basic vertical navegation
+*
+*   @class     .nav
+*   @children
+*   @states
+*   @mutators
+*/
+.nav {
+
+  /**
+  *   .nav
+  *
+  *   Main style.
+  */
+  & {
+    width 100%
+    display flex
+    flex-direction column
+  }
+
+  /**
+  *   Children
+  */
+  & .nav-title {
+    flex 1
+    display flex
+    cursor default
+    user-select none
+    align-items center
+    padding .75rem 1rem
+    color _font-color-light
+    justify-content space-between
+  }
+  & .nav-item {
+    flex 1
+    display flex
+    cursor pointer
+    user-select none
+    align-items center
+    padding .75rem 1rem
+    color _font-color-light
+    justify-content space-between
+    transition all .15s
+
+    & .icon {
+      margin-right .50rem
+    }
+
+    & .name {
+      flex 1
+    }
+
+    &:hover {
+      color _white
+      background-color _primary
+      & * {
+        color inherit
+      }
+    }
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+
+}

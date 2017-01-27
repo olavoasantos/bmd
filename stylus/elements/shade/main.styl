@@ -1,0 +1,28 @@
+/**
+*   Shade
+*
+*   Shade layer to darken content for modal windows.
+*
+*   @class     .shade
+*   @children
+*   @states
+*   @mutators
+*/
+.shade {
+
+  /**
+  *   .shade
+  *
+  *   It sets the main style for Overlay.
+  */
+	& {
+		top 0
+		left 0
+		width 100%
+		height 100%
+		z-index 100
+		position fixed
+		background rgba(_dark, .8)
+	}
+
+}

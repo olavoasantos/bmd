@@ -1,0 +1,21 @@
+for $id in (0..10) {
+  & #slide{$id}:checked {
+    & ~ .slide-show-body > .slide-show-slide[for=slide{$id}] {
+      opacity 1
+      z-index 1
+      width 100%
+      height 100%
+    }
+
+    & ~ .slide-show-bullets > .slide-show-bullet[for=slide{$id}] {
+      transform scale(1.5)
+      background-color _primary
+    }
+  }
+  &.text-white #slide{$id}:checked {
+    & ~ .slide-show-bullets > .slide-show-bullet[for=slide{$id}] {
+        transform scale(1.5)
+        background-color _white
+    }
+  }
+}

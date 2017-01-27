@@ -1,0 +1,152 @@
+/**
+*   Modal window
+*   Css only clever modal window.
+*
+*   @class     .modal
+*   @children  .modal-trigger, .modal-overlay, .modal-container
+*   @states    :checked
+*/
+.modal {
+
+  /**
+  *   Overlay color
+  *   Sets the color of the overlay layer
+  *
+  *   @var    $overlay-color
+  */
+  $overlay-color = #000000;
+
+  /**
+  *   Transition
+  *   Sets a simple fade-in transition between
+  *   the modal's active and inactive
+  *   states.
+  *
+  *   @var    $transition
+  */
+  $transition = opacity .3s;
+
+  /**
+  *   Modal wrapper
+  *   This styles the tag which will wrap the
+  *   collection of tags related to the
+  *   modal window.
+  *
+  *   @selector  .modal
+  */
+  & {
+    display inline-block
+  }
+
+  /**
+  *   Modal trigger
+  *   This is a hidden checkbox which is used to
+  *   tell the browser whether the modal is
+  *   active or not.
+  *
+  *   @selector  .modal > .modal-trigger
+  */
+  & > .modal-trigger {
+    display none
+  }
+
+  /**
+  *   Modal overlay
+  *   This is the overlay layer which is used
+  *   to shade the content and give focus
+  *   to the modal content.
+  *
+  *   @selector  .modal > .modal-trigger ~ .modal-overlay
+  */
+  & > .modal-trigger ~ .modal-overlay {
+    top 0
+    left 0
+    opacity 0
+    width 100%
+    height 100%
+    z-index 100
+    position fixed
+    visibility hidden
+    transition $transition
+
+    & {
+      background-color rgba($overlay-color, .50)
+    }
+
+    &.is-red {
+      $overlay-color = _red
+      background-color rgba($overlay-color, .50)
+    }
+
+    &.is-blue {
+      $overlay-color = _blue
+      background-color rgba($overlay-color, .50)
+    }
+
+    &.is-green {
+      $overlay-color = _green
+      background-color rgba($overlay-color, .50)
+    }
+
+    &.is-yellow {
+      $overlay-color = _yellow
+      background-color rgba($overlay-color, .50)
+    }
+
+    &.is-primary {
+      $overlay-color = _primary
+      background-color rgba($overlay-color, .50)
+    }
+
+    &.is-white {
+      $overlay-color = _white
+      background-color rgba($overlay-color, .50)
+    }
+
+  }
+
+  /**
+  *   Modal container
+  *   This is the container which will hold the modal
+  *   content. It will appear centered on the
+  *   screen.
+  *
+  *   @selector  .modal > .modal-trigger ~ .modal-container
+  */
+  & > .modal-trigger ~ .modal-container {
+    top 50%
+    left 50%
+    opacity 0
+    z-index 110
+    max-width 50%
+    min-width 30%
+    position fixed
+    visibility hidden
+    transition $transition
+    transform translate(-50%, -50%)
+
+    +below(_grid-max-md) {
+      width 100%
+      max-width 100%
+      padding 0 .50rem
+    }
+  }
+
+  /**
+  *   Active modal
+  *   This styles the active state of the modal window,
+  *   making both the overlay and the modal content
+  *   visible to the user.
+  *
+  *   @state      :checked
+  *   @selector   .modal > .modal-trigger:checked
+  *   @sibling    .modal-overlay, .modal-container
+  */
+  & > .modal-trigger:checked {
+    & ~ .modal-overlay, & ~ .modal-container {
+      opacity 1
+      visibility visible
+    }
+  }
+
+}

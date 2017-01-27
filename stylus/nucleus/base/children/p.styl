@@ -1,0 +1,39 @@
+/**
+*   Paragraph
+*
+*   It sets the style of the basic paragraph (p tag)
+*
+*   @class     p
+*   @children
+*   @states
+*   @mutators
+*/
+p {
+
+	/**
+	*   .p
+	*
+	*   It sets the main style for Paragraph.
+	*/
+	& {
+		margin 1rem 0
+		padding .25rem 0
+		font-family _font-family-body
+		font-weight _weight-normal
+	}
+
+	&.is-light {
+		/**
+		*   Font color
+		*
+		*   @var    $color  Light font color.
+		*/
+		$color = _font-color-light;
+
+		& {
+			color $color
+			background-color inherit
+		}
+	}
+
+}

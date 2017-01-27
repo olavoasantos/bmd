@@ -1,0 +1,137 @@
+/**
+*   Slide show
+*
+*   @class     .slide-show_
+*   @children
+*   @states
+*   @mutators
+*/
+
+@import "./mixins/checkedState.styl";
+
+.slide-show {
+
+  /**
+  *   .slide-show
+  *
+  *   Main style.
+  */
+  & {
+    display flex
+    flex-direction column
+  }
+
+  /**
+  *   Slide Show Trigger
+  *
+  *   @selector .slide-show .slide-show-trigger
+  */
+  & &-trigger {
+    display none
+  }
+
+  /**
+  *   Slide Show Body
+  *
+  *   @selector .slide-show .slide-show-trigger ~ .slide-show-body
+  */
+  & &-trigger ~ &-body {
+    display flex
+    position relative
+  }
+
+  /**
+  *   Slide Show Slide
+  *
+  *   @selector .slide-show .slide-show-trigger ~ .slide-show-body > .slide-show-slide
+  */
+  & &-trigger ~ &-body > &-slide {
+    float left
+    padding 1rem 0
+  }
+
+  /**
+  *   Slide Show Bullets
+  *
+  *   @selector .slide-show .slide-show-trigger ~ .slide-show-bullets
+  */
+  & &-trigger ~ &-bullets {
+    width 100%
+    display flex
+    padding 1rem
+    align-items center
+    justify-content center
+  }
+
+  /**
+  *   Slide Show Bullet
+  *
+  *   @selector .slide-show .slide-show-trigger ~ .slide-show-bullets > .slide-show-bullet
+  */
+  & &-trigger ~ &-bullets > &-bullet {
+    width .50rem
+    height .50rem
+    cursor pointer
+    margin 0 .50rem
+    transition all .3s
+    transform scale(.80)
+    background-color _light
+    border-radius _border-radius-circle
+
+    &:hover {
+      transform scale(1.2)
+      background-color _primary-l2
+    }
+
+  }
+
+
+  &.text-white &-trigger ~ &-bullets > &-bullet {
+    width .50rem
+    height .50rem
+    cursor pointer
+    margin 0 .50rem
+    transition all .3s
+    transform scale(.80)
+    background-color _white-d
+    border-radius _border-radius-circle
+
+    &:hover {
+      transform scale(1.2)
+      background-color darken(_white, 20%)
+    }
+
+  }
+
+  /**
+  *   Slide Show Active Sates
+  *
+  *   @var      {int}  $id = 0..10
+  *   @selector .slide-show #slide{$id}:checked {
+  *                 .slide-show ~ .slide-show-body > .slide-show-slide[for=slide{$id}]
+  *                 .slide-show ~ .slide-show-bullets > .slide-show-bullet[for=slide{$id}]
+  *              }
+  */
+  checkedState();
+
+  /**
+  *   Slide Show Hidden Slides
+  *
+  *   @selector .slide-show .slide-show-trigger[id^="slide"]:checked
+  *               ~ .slide-show-body
+  *               > .slide-show-slide[for^="slide"]
+  */
+  & &-trigger[id^="slide"]:checked ~ &-body > &-slide[for^="slide"] {
+    width 0
+    height 0
+    opacity 0
+  }
+
+  & &-trigger[id^="slide"] ~ &-body > &-slide[for="slidenull"] {
+    width 0
+    height 0
+    opacity 0
+    display none
+  }
+
+}

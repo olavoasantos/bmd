@@ -1,0 +1,183 @@
+/**
+*   Margin
+*   Helper class to set base margin.
+*
+*   @class     .has-margin, .has-margin-y, .has-margin-x, .has-margin-top,
+*              .has-margin-right, .has-margin-bottom, .has-margin-left
+*              .has-small-margin, .has-small-margin-y, .has-small-margin-x,
+*              .has-small-margin-top, .has-small-margin-right,
+*              .has-small-margin-bottom, .has-small-margin-left
+*/
+.has-margin {
+
+  /**
+  *   Base margin
+  *   Base margin value.
+  *
+  *   @var    $margin
+  */
+  $margin = 1rem;
+
+  /**
+  *   Margin
+  *   Sets the base margin to all sides.
+  *
+  *   @selector .margin
+  */
+  & {
+    margin-top $margin
+    margin-left $margin
+    margin-right $margin
+    margin-bottom $margin
+  }
+
+  /**
+  *   Margin Horizontal
+  *   Sets the base margin only on the left/right.
+  *
+  *   @selector .margin-x
+  */
+  &-x {
+    margin-left $margin
+    margin-right $margin
+  }
+
+  /**
+  *   Margin Vertical
+  *   Sets the base margin only on the top/bottom.
+  *
+  *   @selector .margin-y
+  */
+  &-y {
+    margin-top $margin
+    margin-bottom $margin
+  }
+
+  /**
+  *   Margin Top
+  *   Sets the base margin to the top.
+  *
+  *   @selector .margin-top
+  */
+  &-top {
+    margin-top $margin
+  }
+
+  /**
+  *   Margin Right
+  *   Sets the base margin to the right.
+  *
+  *   @selector .margin-right
+  */
+  &-right {
+    margin-right $margin
+  }
+
+  /**
+  *   Margin Bottom
+  *   Sets the base margin to the bottom.
+  *
+  *   @selector .margin-bottom
+  */
+  &-bottom {
+    margin-bottom $margin
+  }
+
+  /**
+  *   Margin Left
+  *   Sets the base margin to the left.
+  *
+  *   @selector .margin-left
+  */
+  &-left {
+    margin-left $margin
+  }
+
+}
+
+.has-small-margin {
+
+  /**
+  *   Small margin
+  *   Small margin value.
+  *
+  *   @var    $margin
+  */
+  $margin = .50rem;
+
+  /**
+  *   Margin
+  *   Sets the base margin to all sides.
+  *
+  *   @selector .margin
+  */
+  & {
+    margin-top $margin
+    margin-left $margin
+    margin-right $margin
+    margin-bottom $margin
+  }
+
+  /**
+  *   Margin Horizontal
+  *   Sets the base margin only on the left/right.
+  *
+  *   @selector .margin-x
+  */
+  &-x {
+    margin-left $margin
+    margin-right $margin
+  }
+
+  /**
+  *   Margin Vertical
+  *   Sets the base margin only on the top/bottom.
+  *
+  *   @selector .margin-y
+  */
+  &-y {
+    margin-top $margin
+    margin-bottom $margin
+  }
+
+  /**
+  *   Margin Top
+  *   Sets the base margin to the top.
+  *
+  *   @selector .margin-top
+  */
+  &-top {
+    margin-top $margin
+  }
+
+  /**
+  *   Margin Right
+  *   Sets the base margin to the right.
+  *
+  *   @selector .margin-right
+  */
+  &-right {
+    margin-right $margin
+  }
+
+  /**
+  *   Margin Bottom
+  *   Sets the base margin to the bottom.
+  *
+  *   @selector .margin-bottom
+  */
+  &-bottom {
+    margin-bottom $margin
+  }
+
+  /**
+  *   Margin Left
+  *   Sets the base margin to the left.
+  *
+  *   @selector .margin-left
+  */
+  &-left {
+    margin-left $margin
+  }
+
+}

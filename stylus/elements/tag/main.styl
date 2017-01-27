@@ -1,0 +1,87 @@
+/**
+*   Tag
+*
+*   Basic tag.
+*
+*   @class     .tag
+*   @children
+*   @states
+*   @mutators
+*/
+.tag {
+
+  /**
+  *   .tag
+  *
+  *   Main style.
+  */
+  & {
+    color _white
+    cursor default
+    margin .25rem 0
+    user-select none
+    display inline-block
+    padding .25rem .50rem
+    font-weight _weight-bold
+    background-color _grey-l2
+    border-radius _border-radius
+    font-family _font-family-title
+  }
+
+  /**
+  *   Children
+  */
+
+  /**
+  *   States
+  */
+  &.is-transparent {
+    border none
+    color currentColor
+    background-color transparent
+  }
+  &.is-white {
+    color _grey
+    background-color _white
+    border _border-width solid _white
+  }
+  &.is-primary {
+    background-color _primary
+    border _border-width solid _primary
+  }
+  &.is-yellow {
+    background-color _yellow
+    border _border-width solid _yellow
+  }
+  &.is-red {
+    background-color _red
+    border _border-width solid _red
+  }
+  &.is-green {
+    background-color _green
+    border _border-width solid _green
+  }
+  &.is-blue {
+    background-color _blue
+    border _border-width solid _blue
+  }
+
+  /**
+  *   Mutators
+  */
+  &.is-outlined {
+    color currentColor
+    background-color transparent
+  }
+  &.has-interaction {
+    cursor pointer
+  }
+
+  &.has-interaction::after {
+    content "\f00d"
+    padding-left .50rem
+    font-size _font-size-sm
+    font-family "FontAwesome"
+  }
+
+}

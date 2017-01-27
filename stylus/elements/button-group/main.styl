@@ -1,0 +1,47 @@
+/**
+*   Button group
+*
+*
+*
+*   @class     .button-group
+*   @children
+*   @states
+*   @mutators
+*/
+.button-group {
+
+  /**
+  *   .button-group
+  *
+  *   Main style.
+  */
+
+  /**
+  *   Children
+  */
+  & .button {
+    margin-right -5px
+    border-radius 0
+
+    &:first-child {
+      border-radius _border-radius 0 0 _border-radius
+    }
+
+    &:last-child {
+      border-radius 0 _border-radius _border-radius 0
+    }
+  }
+
+  & .button.is-rounded {
+    border-radius 0
+
+    &:first-child {
+      border-radius 100px 0 0 100px
+    }
+
+    &:last-child {
+      border-radius 0 100px 100px 0
+    }
+  }
+
+}

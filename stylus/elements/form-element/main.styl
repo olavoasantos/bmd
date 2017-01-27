@@ -1,0 +1,430 @@
+/**
+*   Form element
+*
+*
+*
+*   @class     .form-element
+*   @children
+*   @states
+*   @mutators
+*/
+.form-element {
+
+  /**
+  *   .form-element
+  *
+  *   Main style.
+  */
+  & {
+    cursor text
+    display flex
+    margin 1rem 0
+    overflow hidden
+    user-select none
+    align-items center
+    min-height 2.75rem
+    justify-content center
+    border-radius _border-radius
+    border _border-width solid _light
+  }
+
+  & :first-child {
+    padding-left 1rem
+    padding-right 1rem
+  }
+
+  &:hover:not(.is-disabled),
+  &:focus:not(.is-disabled) {
+    border-color _primary-l2
+  }
+
+  &:active:not(.is-disabled) {
+    border-color lighten(_primary-l2, 10%)
+  }
+
+  /**
+  *   Children
+  */
+  & input, & textarea, & .editor, & select {
+    flex 1
+    order 2
+    outline: none
+    padding .75rem 1rem
+  }
+
+  & .editor {
+    flex 1
+    order 0
+    outline: none
+  }
+
+  & select {
+    border none
+    appearance none
+    -moz-appearance none
+    -webkit-appearance none
+
+    &::-ms-expand {
+      display none
+    }
+  }
+
+  & input[type=number]::-webkit-inner-spin-button,
+  & input[type=number]::-webkit-outer-spin-button {
+    margin 0
+    appearance none
+    -moz-appearance none
+    -webkit-appearance none
+  }
+
+  .is-left {
+    order 1
+    display flex
+    min-width 2rem
+    padding .75rem 1rem
+    align-items center
+    justify-content center
+    color _font-color-light
+    font-size _font-size-sm
+    align-content flex-start
+
+    &.is-outlined {
+      border-right _border-width solid _light
+    }
+
+    & > .fa {
+      padding 0
+      font-size _font-size-sm
+      line-height _font-size-base
+    }
+
+    &.is-light {
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _light-l
+    }
+    &.is-blue {
+      color _blue
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _blue-l
+    }
+    &.is-primary {
+      color _primary
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _primary-l
+    }
+    &.is-green {
+      color _green
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _green-l
+    }
+    &.is-yellow {
+      color _yellow
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _yellow-l
+    }
+    &.is-red {
+      color _red
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _red-l
+    }
+  }
+
+  .is-right {
+    order 10
+    display flex
+    padding 0 1rem
+    min-width 2rem
+    align-items center
+    justify-content center
+    color _font-color-light
+    font-size _font-size-sm
+
+    & .fa {
+      padding 0
+      font-size _font-size-sm
+    }
+
+    &.is-outlined {
+      margin-left 1rem
+      border-left _border-width solid _light
+    }
+
+    &.is-light {
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _light-l
+    }
+    &.is-blue {
+      color _blue
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _blue-l
+    }
+    &.is-primary {
+      color _primary
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _primary-l
+    }
+    &.is-green {
+      color _green
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _green-l
+    }
+    &.is-yellow {
+      color _yellow
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _yellow-l
+    }
+    &.is-red {
+      color _red
+      padding-top .75rem
+      padding-bottom .75rem
+      background-color _red-l
+    }
+  }
+
+  /**
+  *   States
+  */
+  &.is-disabled {
+    opacity .5
+    cursor default
+
+    & input {
+      cursor default
+    }
+    & + .form-helper {
+      opacity .5
+    }
+  }
+
+  &.is-active {
+    border-color _primary-l2
+  }
+
+  &.is-yellow {
+    border-color _yellow
+    background-color inherit
+
+    &:hover:not(.is-disabled),
+    &:focus:not(.is-disabled) {
+      border-color _yellow-l2
+    }
+
+    &:active:not(.is-disabled) {
+      border-color lighten(_yellow-l2, 10%)
+    }
+
+    & + .form-helper {
+      color _yellow
+    }
+  }
+  &.is-green {
+    border-color _green
+    background-color inherit
+
+    &:hover:not(.is-disabled),
+    &:focus:not(.is-disabled) {
+      border-color _green-l2
+    }
+
+    &:active:not(.is-disabled) {
+      border-color lighten(_green-l2, 10%)
+    }
+    & + .form-helper {
+      color _green
+    }
+  }
+  &.is-red {
+    border-color _red
+    background-color inherit
+
+    &:hover:not(.is-disabled),
+    &:focus:not(.is-disabled) {
+      border-color _red-l2
+    }
+
+    &:active:not(.is-disabled) {
+      border-color lighten(_red-l2, 10%)
+    }
+    & + .form-helper {
+      color _red
+    }
+  }
+
+  /**
+  *   Mutators
+  */
+  &.is-radio {
+    &, &:hover, &:focus, &:active {
+      border-color transparent
+    }
+    & input[type="radio"] {
+
+      & {
+        display none
+        flex 0 1 auto
+
+        & + .is-right,
+        & + .is-left {
+          display flex
+          cursor pointer
+          align-items center
+          justify-content center
+
+          &::before {
+            content ""
+            color _blue
+            display flex
+            width 1.20rem
+            height 1.20rem
+            font-size .65rem
+            align-items center
+            margin-right .50rem
+            justify-content center
+            border _border-width solid _light
+            border-radius _border-radius-circle
+
+            +below(_grid-max-sm) {
+              padding-top .15rem
+              padding-right .05rem
+            }
+          }
+
+        }
+
+      }
+
+      &:checked {
+        & + .is-right,
+        & + .is-left {
+          &::before {
+            content "\f111"
+            font-family "FontAwesome"
+          }
+        }
+      }
+
+    }
+  }
+
+  &.is-checkbox {
+    &, &:hover, &:focus, &:active {
+      border-color transparent
+    }
+    & input[type="checkbox"] {
+
+      & {
+        display none
+        flex 0 1 auto
+
+        & + .is-right,
+        & + .is-left {
+          cursor pointer
+          &::before {
+            content ""
+            display flex
+            width 1.20rem
+            height 1.25rem
+            align-items center
+            margin-right .50rem
+            justify-content center
+            border-radius _border-radius
+            border _border-width solid _light
+          }
+        }
+      }
+
+      &:checked {
+        & + .is-right,
+        & + .is-left {
+          &::before {
+            color _green
+            content "\f00c"
+            font-family "FontAwesome"
+          }
+        }
+      }
+
+    }
+  }
+
+  &.is-switch {
+    &, &:hover, &:focus, &:active {
+      border-color transparent
+    }
+    & input[type="checkbox"] {
+
+      & {
+        display none
+        flex 0 1 auto
+
+        & + .is-right,
+        & + .is-left {
+          $transition-time = .3s;
+          & {
+            padding 0
+            cursor pointer
+            border-radius 100px
+            background-color _light
+            border _border-width solid _light
+            transition background $transition-time
+          }
+          &::before {
+            color _white
+            display flex
+            left 1.50rem
+            content "off"
+            padding 0 .50rem
+            position relative
+            align-items center
+            justify-content center
+            font-weight _weight-bold
+            transition all $transition-time
+          }
+          &::after {
+            content " "
+            left -2.05rem
+            width 1.75rem
+            height 1.75rem
+            padding .25rem
+            position relative
+            background-color _white
+            transition all $transition-time
+            border _border-width solid _light
+            border-radius _border-radius-circle
+          }
+        }
+      }
+
+      &:checked {
+        & + .is-right,
+        & + .is-left {
+          & {
+            border-color _green
+            background-color _green
+          }
+          &::before {
+            left 0
+            content "on"
+          }
+          &::after {
+            left .0rem
+            border-color _green
+          }
+        }
+      }
+
+    }
+  }
+
+}

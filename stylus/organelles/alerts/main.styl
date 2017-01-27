@@ -1,0 +1,57 @@
+/**
+*   Alerts
+*
+*   @class     .alerts
+*   @children
+*   @states
+*   @mutators
+*/
+.alerts {
+
+  /**
+  *   .alerts
+  *
+  *   Main style.
+  */
+  & {
+    margin 0
+    padding 0
+    right 0
+    bottom 0
+    z-index 200
+    max-width 50%
+    position fixed
+
+    +below(_grid-max-md) {
+      left 0
+      bottom 0
+      max-width 100vw
+    }
+  }
+
+  /**
+  *   Children
+  */
+  & > .alert {
+    cursor default
+    transition all .3s
+    box-shadow 0 0 5px rgba(_dark, .20)
+
+    &:last-child {
+      margin-bottom 0
+    }
+
+    &:hover {
+      box-shadow 0 0 5px rgba(_dark, .50)
+    }
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+
+}

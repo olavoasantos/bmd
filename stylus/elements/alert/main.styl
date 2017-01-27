@@ -1,0 +1,150 @@
+/**
+*   Alert
+*
+*   Basic alert
+*
+*   @class     .alert
+*   @children
+*   @states
+*   @mutators
+*/
+.alert {
+
+  /**
+  *   .alert
+  *
+  *   Main style.
+  */
+  & {
+    display flex
+    margin 1rem 0
+    user-select none
+    color _font-color
+    align-items center
+    padding 1rem 1.25rem
+    background-color _light-l2
+    border-radius _border-radius
+    &.is-outlined {
+      background-color transparent
+      border _border-width solid _font-color
+
+      & .alert-message {
+        color _grey-l
+      }
+    }
+  }
+
+  /**
+  *   Children
+  */
+  & .alert-icon {
+    padding-right 1.25rem
+    font-size _font-size-h2
+  }
+  & .alert-highlight {
+    padding-right .25rem
+    font-weight _weight-bold
+  }
+  & .alert-message {
+    flex 1
+    padding-right .25rem
+  }
+  & .alert-close {
+    & {
+      display flex
+      width 1.50rem
+      cursor pointer
+      height 1.50rem
+      text-align center
+      align-items center
+      margin-left .50rem
+      justify-content center
+      border-radius _border-radius-circle
+    }
+
+    &::after {
+      content "\f00d"
+      font-size _font-size-sm
+      font-family "FontAwesome"
+    }
+
+    &:hover {
+      background-color rgba(0, 0, 0, .3)
+    }
+  }
+
+  /**
+  *   States
+  */
+  &.is-light {
+    color _light-l2
+    background-color _light-l
+    &.is-outlined {
+      border-color _light-l2
+      background-color transparent
+    }
+    & .alert-close:hover {
+      background-color rgba(_light, .3)
+    }
+  }
+  &.is-blue {
+    color _blue
+    background-color _blue-l
+    &.is-outlined {
+      border-color _blue
+      background-color transparent
+    }
+    & .alert-close:hover {
+      background-color rgba(_blue, .3)
+    }
+  }
+  &.is-green {
+    color _green
+    background-color _green-l
+    &.is-outlined {
+      border-color _green
+      background-color transparent
+    }
+    & .alert-close:hover {
+      background-color rgba(_green, .3)
+    }
+  }
+  &.is-yellow {
+    color _yellow
+    background-color _yellow-l
+    &.is-outlined {
+      border-color _yellow
+      background-color transparent
+    }
+    & .alert-close:hover {
+      background-color rgba(_yellow, .3)
+    }
+  }
+  &.is-red {
+    color _red
+    background-color _red-l
+    &.is-outlined {
+      border-color _red
+      background-color transparent
+    }
+    & .alert-close:hover {
+      background-color rgba(_red, .3)
+    }
+  }
+  &.is-primary {
+    color _primary
+    background-color _primary-l
+    &.is-outlined {
+      border-color _primary
+      background-color transparent
+    }
+    & .alert-close:hover {
+      background-color rgba(_primary, .3)
+    }
+  }
+
+  /**
+  *   Mutators
+  */
+
+}

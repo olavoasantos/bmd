@@ -1,0 +1,98 @@
+/**
+*   Table
+*
+*
+*
+*   @class     .table
+*   @children
+*   @states
+*   @mutators
+*/
+.table {
+
+  /**
+  *   .table
+  *
+  *   Main style.
+  */
+  & {
+    width 100%
+    color _grey
+  }
+
+  /**
+  *   Children
+  */
+  caption {
+    margin .50rem 0
+    text-align left
+    font-size _font-size-sm
+    font-weight _weight-bold
+
+    &[data-table]::before {
+      margin-right .50rem
+      content attr(data-table)
+    }
+
+  }
+
+  & td {
+    display table-cell
+    vertical-align middle
+  }
+
+  thead {
+    &.is-blue {
+      background-color _blue-l
+    }
+
+    & th {
+      color _grey-l
+      padding .75rem 1rem
+      border-bottom _border-width solid _light-l2
+    }
+  }
+
+  tbody {
+    & td {
+      & {
+        padding .75rem 1rem
+      }
+
+      &.is-highlighted {
+        font-weight _weight-bold
+      }
+    }
+  }
+
+  tfoot td {
+    padding .25rem 1rem
+    border-top _border-width solid _light-l2
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+  &.is-centered {
+    & td, & th {
+      text-align center
+    }
+  }
+
+  &.is-hoverable tbody tr {
+    &:hover {
+      background-color _primary-l !important
+    }
+  }
+
+  &.is-striped tr {
+    &:nth-child(2n) {
+      background-color _light-l
+    }
+  }
+
+}

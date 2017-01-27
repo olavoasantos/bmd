@@ -1,0 +1,36 @@
+/**
+*   Box
+*
+*   Basic box
+*
+*   @class     .box
+*   @children
+*   @states
+*   @mutators
+*/
+.box {
+
+  /**
+  *   .card
+  *
+  *   Main style.
+  */
+  & {
+    width 100%
+    padding 1rem
+    margin 1rem 0
+    display block
+    background-color _white
+    border-radius _border-radius
+    border _border-width solid _light-l2
+  }
+
+  & > :first-child {
+    margin-top 0
+  }
+
+  &.no-padding {
+    padding 0
+  }
+
+}

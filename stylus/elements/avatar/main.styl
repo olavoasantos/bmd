@@ -1,0 +1,61 @@
+/**
+*   Avatar
+*
+*   Basic avatar
+*
+*   @class     .avatar
+*   @children
+*   @states
+*   @mutators
+*/
+.avatar {
+
+  /**
+  *   .avatar
+  *
+  *   Main style.
+  */
+  & {
+    width 3rem
+    height 3rem
+    padding .10rem
+    padding-left .2rem
+    display inline-block
+    border 2*_border-width solid _light
+    border-radius _border-radius-circle
+  }
+
+  /**
+  *   Children
+  */
+  img,
+  .avatar-image {
+    margin 0
+    width 100%
+    height 100%
+    display flex
+    background center
+    align-items center
+    justify-content center
+    background-size contain
+    border-radius _border-radius-circle
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+  &.is-large {
+    width 5rem
+    height 5rem
+  }
+
+  &.is-small {
+    width 2rem
+    height 2rem
+  }
+
+}

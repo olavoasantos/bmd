@@ -1,0 +1,56 @@
+/**
+*   html
+*
+*   @class     h1, h2, h3, h4, h5, h6
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	/**
+	*   Font family
+	*
+	*   @var    $font-family  Header's font family.
+	*/
+	$font-family = _font-family-title;
+
+	/**
+	*   Font weight
+	*
+	*   @var    $font-weight  Header's font weight.
+	*/
+	$font-weight = _weight-title-normal;
+
+	/**
+	*   It sets the property style for margin
+	*
+	*   @prop    margin
+	*/
+	$margin = 1.50rem 0 .75rem 0;
+
+	/**
+	*   h1, h2, h3, h4, h5, h6
+	*
+	*   It sets the main style for Headings.
+	*/
+	& {
+		line-height 1
+		margin $margin
+		word-break break-word
+		font-weight $font-weight
+		font-family $font-family
+	}
+
+	/**
+	*   h1, h2, h3, h4, h5, h6:not(:last-child)
+	*
+	*   It sets the style for not(:last-child) selector.
+	*/
+	&:last-child {
+		margin-bottom 0
+	}
+
+}

@@ -1,0 +1,110 @@
+/**
+*   Slide Show
+*
+*   @class     .slide-show
+*   @children
+*   @states
+*   @mutators
+*/
+.slide-show {
+
+  /**
+  *   .slide-show
+  *
+  *   Main style.
+  */
+  & {
+    width 100%
+    display flex
+    flex-direction column
+  }
+
+  /**
+  *   Children
+  */
+  & .slide-body {
+    display flex
+    position relative
+
+    & .slide-back, & .slide-next {
+      top 0
+      opacity 0
+      height 100%
+      display flex
+      cursor pointer
+      min-width 3rem
+      user-select none
+      position absolute
+      align-items center
+      transition all .3s
+      justify-content center
+
+      &:hover {
+        opacity 1
+      }
+
+      &::before {
+        color _white
+        padding .10rem 1rem
+        font-size _font-size-h2
+        font-family "FontAwesome"
+        background-color rgba(0,0,0,.3)
+        border-radius _border-radius-circle
+      }
+
+    }
+
+    & .slide-back {
+      left 0
+
+      &::before {
+        content "\f104"
+      }
+    }
+
+    & .slide-next {
+      right 0
+
+      &::before {
+        content "\f105"
+      }
+    }
+  }
+
+  & .slide-bullets {
+    width 100%
+    display flex
+    align-items center
+    justify-content center
+  }
+
+  & .slide-bullet {
+    width .50rem
+    height .50rem
+    cursor pointer
+    margin 0 .50rem
+    transform scale(.80)
+    background-color _light
+    transition all .3s
+    border-radius _border-radius-circle
+
+    &:hover {
+      transform scale(1.2)
+      background-color _primary-l2
+    }
+
+    &.is-active {
+      transform scale(1.5)
+      background-color _primary
+    }
+  }
+
+  /**
+  *   States
+  */
+
+  /**
+  *   Mutators
+  */
+
+}

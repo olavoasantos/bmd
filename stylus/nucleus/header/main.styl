@@ -1,0 +1,46 @@
+/**
+*   Is header
+*
+*   @class     .is-h5
+*   @children
+*   @states
+*   @mutators
+*/
+.is-h5 {
+
+  /**
+  *   It sets the property style for font size
+  *
+  *   @prop    font-size
+  */
+  $font-size = _font-size-base;
+
+  /**
+	*   Font family
+	*
+	*   @var    $font-family  Header's font family.
+	*/
+  $font-family = _font-family-title;
+
+  /**
+  *   Font weight
+  *
+  *   @var    $font-weight  Header's font weight.
+  */
+  $font-weight = _weight-title-normal;
+
+  /**
+  *   .is-h5
+  *
+  *   Main style.
+  */
+  & {
+    line-height 1
+    font-size $font-size
+    word-break break-word
+    font-weight $font-weight
+    font-family $font-family
+    text-transform uppercase
+  }
+
+}
